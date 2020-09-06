@@ -1,0 +1,17 @@
+{
+  "routes": [{
+    "method": "GET",
+    "path": "/auth",
+    "handler": "allegro.authorize",
+    "config": {
+      "policies": []
+    }
+  }, {
+    "method": "POST",
+    "path": "/auth/verify",
+    "handler": "allegro.verify",
+    "config": {
+      "policies": []
+    }
+  }]
+}
