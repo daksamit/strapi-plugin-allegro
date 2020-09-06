@@ -1,3 +1,3 @@
 # Strapi plugin for allegro
 
-A quick description of allegro.
+Plugin requires strapi-hook-allegro to access allegro rest api - [npm](https://www.npmjs.com/package/strapi-hook-allegro) and [git](https://github.com/daksamit/strapi-hook-allegro)
