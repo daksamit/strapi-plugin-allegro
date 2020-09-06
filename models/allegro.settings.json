@@ -1,0 +1,21 @@
+{
+  "collectionName": "allegro",
+  "info": {
+    "name": "allegro",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "account": {
+      "type": "string",
+      "default": "default"
+    },
+    "tokens": {
+      "type": "json"
+    }
+  }
+}
