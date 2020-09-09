@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-allegro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is the description of the plugin.",
   "strapi": {
     "name": "catalog",
@@ -13,13 +13,11 @@
     "email": "",
     "url": ""
   },
-  "maintainers": [
-    {
-      "name": "A Strapi developer",
-      "email": "",
-      "url": ""
-    }
-  ],
+  "maintainers": [{
+    "name": "A Strapi developer",
+    "email": "",
+    "url": ""
+  }],
   "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
