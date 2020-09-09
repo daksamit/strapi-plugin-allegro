@@ -11,14 +11,17 @@ module.exports = {
    */
 
   authorize: async (ctx) => {
-    const verifyEndpoint = "/allegro/auth/verify";
-    const accounts = [...strapi.config.hook.settings.allegro.accounts];
+    try {
+      const verifyEndpoint = "/allegro/auth/verify";
+      const accounts = strapi.config.hook.settings.allegro.accounts || [];
+      if (accounts.length < 1)
+        throw new Error("Allegro accounts in hook settings are missing");
 
-    const client = strapi.hook.allegro.clients.get(accounts[0]);
-    const bind = await client.bindApp();
-    const { verification_uri_complete, device_code } = bind;
+      const client = strapi.hook.allegro.clients.get(accounts[0]);
+      const bind = await client.bindApp();
+      const { verification_uri_complete, device_code } = bind;
 
-    ctx.send(`
+      ctx.send(`
       <div style="display: flex; flex-direction: column;">
         <h1>Autoryzuj konto allegro</h1>
           <a href="${verification_uri_complete}" target="_blank">Powiąż aplikację</a>
@@ -61,6 +64,9 @@ module.exports = {
         }
       </script>
     `);
+    } catch (err) {
+      ctx.throw(err);
+    }
   },
 
   /**
